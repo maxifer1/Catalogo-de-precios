@@ -1,4 +1,5 @@
 export const STORE_NAME_STORAGE_KEY = "reports-ui:store-name"
+
 export const STORE_NAME_MAX_LENGTH = 50
 
 export function normalizeStoreName(value: string) {
@@ -19,27 +20,23 @@ export function validateStoreName(value: string): string | null {
   return null
 }
 
-export function readStoredStoreName(): string | null {
+/**
+ * El nombre del local NO se persiste: vive solo en el estado de React y se
+ * pierde al recargar o cerrar la página, que es el comportamiento buscado.
+ *
+ * Esta función existe únicamente para limpiar el valor que versiones
+ * anteriores dejaron guardado en el navegador de quienes ya visitaron la
+ * página. Se puede eliminar más adelante.
+ */
+export function clearStoredStoreName() {
   if (typeof window === "undefined") {
-    return null
+    return
   }
 
   try {
-    const stored = window.localStorage.getItem(STORE_NAME_STORAGE_KEY)
-    if (!stored) {
-      return null
-    }
-
-    return validateStoreName(stored) ? null : stored
+    window.localStorage.removeItem(STORE_NAME_STORAGE_KEY)
+    window.sessionStorage.removeItem(STORE_NAME_STORAGE_KEY)
   } catch {
-    return null
-  }
-}
-
-export function persistStoreName(storeName: string) {
-  try {
-    window.localStorage.setItem(STORE_NAME_STORAGE_KEY, storeName)
-  } catch {
-    // Storage may be unavailable; the name still lives in React state.
+    // El almacenamiento puede no estar disponible; no afecta al flujo.
   }
 }
