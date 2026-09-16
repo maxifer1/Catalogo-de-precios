@@ -116,7 +116,7 @@ export function PlanCards({ storeName }: PlanCardsProps) {
       
       <div className="mb-6">
         <div className="text-3xl font-extrabold text-slate-900 dark:text-white">
-          $75.000 <span className="text-xs font-normal text-slate-500">/ mes</span>
+          $60.000 <span className="text-xs font-normal text-slate-500">/ mes</span>
         </div>
         <div className="text-xs text-slate-400 dark:text-slate-500 mt-1.5 italic">
           *Ajustable por IPC Trimestral
@@ -165,7 +165,7 @@ export function PlanCards({ storeName }: PlanCardsProps) {
 
       <div className="mb-6 flex flex-col">
         <div className="text-3xl font-extrabold text-[#0077B5]">
-          $750.000
+          $600.000
         </div>
         <div className="text-xs font-normal text-slate-500 mt-1">
           Pago único
@@ -214,7 +214,7 @@ export function PlanCards({ storeName }: PlanCardsProps) {
 
       <div className="mb-6">
         <div className="text-3xl font-extrabold text-slate-900 dark:text-white">
-          $95.000 <span className="text-xs font-normal text-slate-500">/ mes</span>
+          $70.000 <span className="text-xs font-normal text-slate-500">/ mes</span>
         </div>
         <div className="text-xs text-slate-400 dark:text-slate-500 mt-1.5 italic">
           *Ajustable por IPC Trimestral
@@ -269,7 +269,7 @@ export function PlanCards({ storeName }: PlanCardsProps) {
 
       <div className="mb-6 flex flex-col">
         <div className="text-3xl font-extrabold text-white">
-          $950.000
+          $700.000
         </div>
         <div className="text-xs font-normal text-slate-400 mt-1">
           pago único
